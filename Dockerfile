@@ -12,7 +12,7 @@ RUN curl -o sonar-javascript-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-javascrip
 RUN curl -o sonar-php-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-php-plugin/sonar-php-plugin-2.10.0.2087.jar
 RUN curl -o sonar-checkstyle-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-checkstyle-plugin/sonar-checkstyle-plugin-2.4.jar
 
-# Add Scala Plugin
+# Add Scala Plugin - https://github.com/ncredinburgh/sonar-scalastyle
 ADD plugins/sonar-scalastyle-0.0.3-SNAPSHOT.jar /opt/sonarqube/extensions/plugins/
 
 VOLUME ["$SONARQUBE_HOME/data", "$SONARQUBE_HOME/extensions", "/qualityprofile"]
