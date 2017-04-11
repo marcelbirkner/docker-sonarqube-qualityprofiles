@@ -1,13 +1,31 @@
-# Usage
+# Option 1: Docker Hub Usage
 
-Build the image
+Pull Docker image from Docker Hub
 ```
-docker build -t marcelbirkner/docker-sonarqube-profiles .
+docker pull mbirkner/docker-sonarqube-qualityprofiles
 ```
 
-Run the container
+Start Docker Container from image
 ```
-docker run -d --name sonarqube-profiles -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 -p 9002:9002 marcelbirkner/docker-sonarqube-profiles
+docker run -d --name docker-sonarqube-profiles -p 9000:9000 -p 9002:9002 mbirkner/docker-sonarqube-qualityprofiles
+```
+
+# Option 2: Build Container yourself
+
+Clone Git Repository
+```
+git clone https://github.com/marcelbirkner/docker-sonarqube-qualityprofiles.git
+cd docker-sonarqube-qualityprofiles
+```
+
+Build image
+```
+docker build -t docker-sonarqube-profiles .
+```
+
+Run container
+```
+docker run -d --name docker-sonarqube-profiles -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 -p 9002:9002 docker-sonarqube-profiles
 ```
 
 Get logs for container
