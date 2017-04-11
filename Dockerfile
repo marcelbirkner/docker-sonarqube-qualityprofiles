@@ -20,4 +20,3 @@ VOLUME ["$SONARQUBE_HOME/data", "$SONARQUBE_HOME/extensions", "/qualityprofile"]
 ADD start_with_profile.sh /opt/sonarqube/start_with_profile.sh
 
 ENTRYPOINT ["/opt/sonarqube/start_with_profile.sh"]
-# ENTRYPOINT ["./bin/run.sh"]
