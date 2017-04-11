@@ -15,6 +15,9 @@ RUN curl -o sonar-checkstyle-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-checkstyl
 # Add Scala Plugin - https://github.com/ncredinburgh/sonar-scalastyle
 ADD plugins/sonar-scalastyle-0.0.3-SNAPSHOT.jar /opt/sonarqube/extensions/plugins/
 
+# Add default Java Quality Profile
+ADD qualityprofile/java-standardprofile.xml /qualityprofile/
+
 VOLUME ["$SONARQUBE_HOME/data", "$SONARQUBE_HOME/extensions", "/qualityprofile"]
 
 ADD start_with_profile.sh /opt/sonarqube/start_with_profile.sh
