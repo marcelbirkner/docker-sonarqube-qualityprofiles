@@ -30,5 +30,5 @@ docker run -d --name docker-sonarqube-profiles -v $PWD/qualityprofile:/qualitypr
 
 Get logs for container
 ```
-docker logs -f sonarqube-profile
+docker logs -f docker-sonarqube-profiles
 ```
